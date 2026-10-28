@@ -1,0 +1,7 @@
+{
+  "name": "Phoni Repo",
+  "description": "Tweaks and little experiments for iPhone 6 on iOS 12.5.8.",
+  "url": "https://realphoni.github.io/phoni-repo/",
+  "source": "https://github.com/realphoni/phoni-repo",
+  "architecture": "iphoneos-arm"
+}
