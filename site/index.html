@@ -4,9 +4,9 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#07110e">
-  <meta name="description" content="Phoni's home for iOS 12 tweaks. Add the Sileo source, browse packages, and install Phoni’s own tweaks on iPhone 6.">
-  <title>Phoni Repo — a little more iPhone.</title>
-  <link rel="icon" href="assets/mark.svg" type="image/svg+xml">
+  <meta name="description" content="My tweaks and other stuff for iOS 12.5.8. Add the repo in Sileo to install them.">
+  <title>Phoni’s repo</title>
+  <link rel="icon" href="CydiaIcon.png" type="image/png">
   <link rel="apple-touch-icon" href="CydiaIcon.png">
   <link rel="stylesheet" href="style.css">
   <script src="app.js" defer></script>
@@ -16,53 +16,27 @@
   <div class="ambient" aria-hidden="true"></div>
   <header class="nav-wrap">
     <nav aria-label="Main navigation">
-      <a class="brand" href="./"><img src="assets/mark.svg" width="26" height="26" alt=""><span>phoni<span class="brand-light"> / repo</span></span></a>
-      <div class="nav-links"><a href="#packages">Packages</a><a href="#source">Add source</a><a href="#guide">Get started</a></div>
+      <a class="brand" href="./"><img src="CydiaIcon.png" width="26" height="26" alt=""><span>phoni<span class="brand-light"> / repo</span></span></a>
+      <div class="nav-links"><a href="#packages">Packages</a><a href="#source">Add source</a></div>
       <a class="source-link" href="https://github.com/realphoni/phoni-repo">GitHub <span aria-hidden="true">↗</span></a>
     </nav>
   </header>
   <main id="main">
     <section class="hero wrap" id="source">
       <div class="hero-copy">
-        <div class="eyebrow"><span class="status-dot"></span> A SMALL REPO FOR A CLASSIC IPHONE</div>
-        <h1>A little more<br><span>your iPhone.</span></h1>
-        <p class="intro">Tweaks, experiments, and the occasional good idea.<br class="desktop-break"> Made for the iPhone 6 that still has more to give.</p>
+        <p class="hello">hey, i’m phoni.</p>
+        <h1>my sileo repo <span>:)</span></h1>
+        <p class="intro">My tweaks and other stuff for iOS 12.5.8.<br>Add the repo in Sileo to install them.</p>
         <div class="actions"><a class="button primary" href="sileo://source/https://realphoni.github.io/phoni-repo/">Add to Sileo <span aria-hidden="true">＋</span></a><a class="button secondary" href="#packages">Browse tweaks <span aria-hidden="true">↗</span></a></div>
         <div class="repo-address"><code id="repo-url">https://realphoni.github.io/phoni-repo/</code><button id="copy-source" aria-label="Copy repository URL" title="Copy repository URL"><svg aria-hidden="true" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="2"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"/></svg></button></div>
-        <div class="hero-meta"><span>iPhone 6</span><span>iOS 12.5.8</span><span>Rootful · arm64</span></div>
-      </div>
-      <div class="hero-art" aria-label="Illustration of an iPhone with the Phoni Repo source">
-        <div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
-        <span class="art-label label-top">OLD PHONE. NEW POSSIBILITIES.</span>
-        <div class="phone">
-          <div class="earpiece"></div><div class="camera"></div>
-          <div class="screen">
-            <div class="phone-status"><span>●●●●●</span><span>9:41</span><span>100% ▰</span></div>
-            <div class="screen-heading"><small>SOURCES</small><span>My little corner<br>of iOS.</span></div>
-            <div class="phone-source"><img src="assets/mark.svg" width="44" height="44" alt=""><div><strong>Phoni Repo</strong><small>tweaks & other stuff</small></div><span class="phone-check">✓</span></div>
-            <div class="screen-line"></div><div class="screen-line short"></div>
-            <div class="phone-note"><span>12</span><div>Built for a classic.<br><small>Room for something new.</small></div></div>
-            <div class="phone-tabs"><span>▧<small>Featured</small></span><span>◷<small>News</small></span><span class="active">▱<small>Sources</small></span><span>⌕<small>Search</small></span></div>
-          </div><div class="home-button"></div>
-        </div>
-        <div class="floating-tag"><span class="status-dot"></span> iOS 12, with a personal touch.</div>
-        <span class="art-label label-bottom">DESIGNED TO BE TINKERED WITH ↗</span>
       </div>
     </section>
-    <div class="compat-strip"><div class="wrap"><span><span class="status-dot"></span> Built around iOS 12</span><span>A8 / arm64</span><span>Rootful packages</span><span>Open source, always curious <span aria-hidden="true">↗</span></span></div></div>
     <section class="wrap packages-section" id="packages">
-      <div class="section-heading"><div><span class="eyebrow">01 / THE COLLECTION</span><h2>Small tweaks. Nice changes.</h2></div><span id="package-count" class="count">Loading packages…</span></div>
+      <div class="section-heading"><div><h2>My tweaks</h2></div><span id="package-count" class="count">Loading packages…</span></div>
       <div class="package-toolbar"><label class="search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><input type="search" id="package-search" placeholder="Find a package…" aria-label="Search packages"></label><div class="filters" aria-label="Package filters"><button data-filter="all" class="selected" aria-pressed="true">All packages</button><button data-filter="Tweaks" aria-pressed="false">Tweaks</button><button data-filter="Themes" aria-pressed="false">Themes</button><button data-filter="Utilities" aria-pressed="false">Utilities</button></div></div>
-      <div id="package-list" class="package-grid" aria-live="polite"><div class="empty-state"><span class="empty-symbol">＋</span><h3>Loading the collection…</h3></div></div>
-      <p class="section-footnote">Package compatibility is declared by its developer. Test each release on your device.</p>
-    </section>
-    <section class="wrap guide-section" id="guide"><div class="section-heading"><div><span class="eyebrow">02 / YOUR TWEAKS, YOUR REPO</span><h2>Make it. Ship it. Try it.</h2></div><a class="text-link" href="https://github.com/realphoni/phoni-repo#readme">Full developer guide ↗</a></div><div class="steps"><article><span class="step-number">01</span><h3>Build your tweak.</h3><p>Create your tweak and compile it with <a href="https://theos.dev/docs/installation">Theos</a> on macOS, Linux, WSL, or a supported jailbroken device.</p><code class="command">make package FINALPACKAGE=1</code></article><article><span class="step-number">02</span><h3>Drop it in the repo.</h3><p>Commit the finished <code>.deb</code> to the <code>debs/</code> folder on GitHub. The deployment workflow checks it and builds the package index and depictions.</p><a class="text-link" href="https://github.com/realphoni/phoni-repo/tree/main/debs">Open package folder ↗</a></article><article><span class="step-number">03</span><h3>Refresh. Install. Enjoy.</h3><p>Wait for the <a href="https://github.com/realphoni/phoni-repo/actions">Pages workflow</a> to finish. Add this source in Sileo, refresh Sources, then install your new creation.</p><a class="text-link" href="sileo://source/https://realphoni.github.io/phoni-repo/">Open in Sileo ↗</a></article></div>
-      <div class="device-note"><span class="note-icon">i</span><div><strong>A quick note for this little iPhone.</strong><p>This repo targets a jailbroken iPhone 6 on iOS 12.5.8. Use rootful <code>iphoneos-arm</code> packages containing <code>arm64</code> binaries. Sileo manages packages; it doesn’t jailbreak your phone. Check the dependencies and test each tweak on your phone before publishing.</p></div></div>
-      <details><summary>Adding the source manually</summary><p>In Sileo, open Sources → + and paste <code>https://realphoni.github.io/phoni-repo/</code>. If the Add to Sileo button doesn’t open the app, use this method.</p></details>
-      <details><summary>Why are there no packages yet?</summary><p>This is a fresh home for Phoni’s own packages. Once a built .deb is added to <code>debs/</code> and the workflow succeeds, it appears here and in Sileo. Starter source files are not installable packages.</p></details>
+      <div id="package-list" class="package-grid" aria-live="polite"><div class="empty-state"><span class="empty-symbol">＋</span><h3>Loading tweaks…</h3></div></div>
     </section>
   </main>
-  <footer class="wrap"><a class="brand" href="https://github.com/realphoni/home"><img src="assets/mark.svg" width="22" height="22" alt="">phoni<span class="brand-light"> / repo</span></a><p>A little corner of iOS. Made by Phoni.</p><div><a href="https://github.com/realphoni/phoni-repo">Source ↗</a><a href="https://github.com/realphoni/phoni-repo/issues">Report an issue ↗</a></div></footer>
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
   <noscript><p class="wrap">JavaScript is needed for the website package list. The Sileo source works independently. <a href="https://github.com/realphoni/phoni-repo/tree/main/debs">Browse package files on GitHub</a>.</p></noscript>
 </body>

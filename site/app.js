@@ -26,9 +26,9 @@
     if (!loaded) return;
     var term = query.value.trim().toLowerCase();
     var matches = packages.filter(function (pkg) { return (filter === 'all' || pkg.section === filter) && [pkg.name, pkg.description, pkg.id].join(' ').toLowerCase().indexOf(term) !== -1; });
-    document.getElementById('package-count').textContent = packages.length + (packages.length === 1 ? ' package' : ' packages') + ' in the repo';
-    if (!packages.length) { message('A fresh start. Something good soon.', 'This repo is ready for its first release. Build a tweak, drop the .deb into debs/, and it will show up here.', 'Upload your first .deb ↗', 'https://github.com/realphoni/phoni-repo/upload/main/debs'); return; }
-    if (!matches.length) { message('Nothing here just yet.', 'Try another search or choose a different category.'); return; }
+    document.getElementById('package-count').textContent = packages.length + (packages.length === 1 ? ' package' : ' packages');
+    if (!packages.length) { message('Nothing here yet.', 'I haven’t uploaded any tweaks yet. Check back later.'); return; }
+    if (!matches.length) { message('No matching tweaks.', 'Try another search or category.'); return; }
     list.textContent = '';
     matches.forEach(function (pkg) {
       var card = element('article', 'package-card'), header = element('header'), image = document.createElement('img'), heading = element('div');
@@ -42,6 +42,6 @@
     filter = button.getAttribute('data-filter'); Array.prototype.forEach.call(document.querySelectorAll('[data-filter]'), function (b) { var active = b === button; b.classList.toggle('selected', active); b.setAttribute('aria-pressed', String(active)); }); render();
   }); });
   fetch('packages.json').then(function (response) { if (!response.ok) throw new Error('Package index unavailable'); return response.json(); }).then(function (data) { if (!Array.isArray(data)) throw new Error('Invalid catalog'); packages = data; loaded = true; render(); }).catch(function () {
-    document.getElementById('package-count').textContent = 'Catalog unavailable'; message('The catalog couldn’t load.', 'Try refreshing this page. You can still add the source in Sileo or view the package files on GitHub.', 'View package files ↗', 'https://github.com/realphoni/phoni-repo/tree/main/debs');
+    document.getElementById('package-count').textContent = 'Couldn’t load packages'; message('Couldn’t load the tweaks.', 'Try refreshing the page, or have a look on GitHub.', 'View on GitHub ↗', 'https://github.com/realphoni/phoni-repo/tree/main/debs');
   });
 }());
