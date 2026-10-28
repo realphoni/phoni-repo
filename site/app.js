@@ -32,7 +32,7 @@
     list.textContent = '';
     matches.forEach(function (pkg) {
       var card = element('article', 'package-card'), header = element('header'), image = document.createElement('img'), heading = element('div');
-      image.src = 'CydiaIcon.png'; image.alt = ''; heading.appendChild(element('h3', '', pkg.name)); heading.appendChild(element('small', '', pkg.version)); header.appendChild(image); header.appendChild(heading); card.appendChild(header);
+      image.src = 'CydiaIcon.png?v=2'; image.alt = ''; heading.appendChild(element('h3', '', pkg.name)); heading.appendChild(element('small', '', pkg.version)); header.appendChild(image); header.appendChild(heading); card.appendChild(header);
       card.appendChild(element('p', '', pkg.description.split('\n')[0])); var foot = element('div', 'card-foot'); foot.appendChild(element('span', 'badge', pkg.section));
       var link = element('a', 'text-link', 'View package ↗'); link.href = 'package.html?id=' + encodeURIComponent(pkg.id); foot.appendChild(link); card.appendChild(foot); list.appendChild(card);
     });
