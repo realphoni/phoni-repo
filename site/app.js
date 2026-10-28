@@ -41,7 +41,7 @@
   Array.prototype.forEach.call(document.querySelectorAll('[data-filter]'), function (button) { button.addEventListener('click', function () {
     filter = button.getAttribute('data-filter'); Array.prototype.forEach.call(document.querySelectorAll('[data-filter]'), function (b) { var active = b === button; b.classList.toggle('selected', active); b.setAttribute('aria-pressed', String(active)); }); render();
   }); });
-  fetch('packages.json').then(function (response) { if (!response.ok) throw new Error('Package index unavailable'); return response.json(); }).then(function (data) { if (!Array.isArray(data)) throw new Error('Invalid catalog'); packages = data; loaded = true; render(); }).catch(function () {
+  fetch('packages.json', {cache: 'no-store'}).then(function (response) { if (!response.ok) throw new Error('Package index unavailable'); return response.json(); }).then(function (data) { if (!Array.isArray(data)) throw new Error('Invalid catalog'); packages = data; loaded = true; render(); }).catch(function () {
     document.getElementById('package-count').textContent = 'Couldn’t load packages'; message('Couldn’t load the tweaks.', 'Try refreshing the page, or have a look on GitHub.', 'View on GitHub ↗', 'https://github.com/realphoni/phoni-repo/tree/main/debs');
   });
 }());

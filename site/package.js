@@ -2,7 +2,7 @@
   'use strict';
   var host = document.getElementById('detail'), id = new URLSearchParams(location.search).get('id');
   function add(tag, text, cls) { var el = document.createElement(tag); el.textContent = text; if (cls) el.className = cls; host.appendChild(el); return el; }
-  fetch('packages.json').then(function (r) { if (!r.ok) throw new Error('Catalog unavailable. Please try again later.'); return r.json(); }).then(function (packages) {
+  fetch('packages.json', {cache: 'no-store'}).then(function (r) { if (!r.ok) throw new Error('Catalog unavailable. Please try again later.'); return r.json(); }).then(function (packages) {
     var pkg = packages.filter(function (entry) { return entry.id === id; })[0]; if (!pkg) throw new Error('This package is not in the current catalog.');
     document.title = pkg.name + ' — Phoni Repo'; host.textContent = ''; add('span', 'PHONI REPO / THE COLLECTION', 'eyebrow'); add('h1', pkg.name);
     var meta = add('div', '', 'detail-meta'); [pkg.version, pkg.section, 'Rootful / ' + pkg.architecture].forEach(function (text) { var badge = document.createElement('span'); badge.className = 'badge'; badge.textContent = text; meta.appendChild(badge); });
