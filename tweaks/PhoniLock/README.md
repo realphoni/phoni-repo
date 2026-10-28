@@ -2,7 +2,9 @@
 
 my first tweak :) change the lock-screen clock, date, colors, and add your own text.
 
-For a rootful iPhone 6 on iOS 12.5.8. First beta, not yet tested on a physical phone.
+Tested and working on my rootful iPhone 6 on iOS 12.5.8.
+
+Known issue: Xen HTML widgets overlap PhoniLock. This version is not compatible with Xen HTML.
 
 ## using it
 

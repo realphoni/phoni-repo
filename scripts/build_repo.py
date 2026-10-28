@@ -197,6 +197,13 @@ def build(root: Path, output: Path):
             raise ValueError('Package exceeds the GitHub file size limit: ' + path.name)
         filename = 'debs/' + quote(path.name, safe='-._~')
         package_id = fields['Package']
+        # Repository copy can be corrected without replacing an installed .deb.
+        repo_description = config.get('package_descriptions', {}).get(package_id)
+        if repo_description is not None:
+            if not isinstance(repo_description, str) or not repo_description.strip():
+                raise ValueError('Package description must be non-empty text: ' + package_id)
+            lines = repo_description.strip().splitlines()
+            fields['Description'] = lines[0] + ''.join('\n ' + (line if line.strip() else '.') for line in lines[1:])
         # Generate version-specific depictions so older versions retain their own metadata.
         version_key = hashlib.sha256((fields['Version'] + ':' + fields['Architecture']).encode()).hexdigest()[:16]
         depiction_path = 'depictions/' + package_id + '-' + version_key + '.json'

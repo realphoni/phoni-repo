@@ -3,5 +3,8 @@
   "description": "My tweaks and other stuff for iOS 12.5.8.",
   "url": "https://realphoni.github.io/phoni-repo/",
   "source": "https://github.com/realphoni/phoni-repo",
-  "architecture": "iphoneos-arm"
+  "architecture": "iphoneos-arm",
+  "package_descriptions": {
+    "com.phoni.phonilock": "Customize your iOS 12 lock-screen clock, date, colors, and text.\nSettings are in Settings > PhoniLock. Includes font and size choices, alignment, custom text, and switches to hide lock-screen elements.\n\nTested and working on my iPhone 6 running iOS 12.5.8.\nKnown issue: Xen HTML widgets overlap PhoniLock. This version is not compatible with Xen HTML."
+  }
 }
