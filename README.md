@@ -8,6 +8,8 @@ Tweaks and other stuff for my iPhone 6 on iOS 12.5.8.
 
 [PhoniLock](tweaks/PhoniLock/) — clock/date styles, colors, custom text, and hiding lock-screen elements. Tested on my iPhone 6 (iOS 12.5.8). Xen HTML widgets overlap it, so they aren’t compatible right now.
 
+[DownShot](tweaks/DownShot/) — Power + Volume Down screenshots on iOS 12. First beta, needs testing on a phone.
+
 ## how do i add it?
 
 Open [the website](https://realphoni.github.io/phoni-repo/) and press **Add to Sileo**.

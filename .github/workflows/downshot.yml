@@ -1,0 +1,38 @@
+name: Build DownShot
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tweaks/DownShot/**'
+      - 'scripts/prepare-theos.sh'
+      - 'scripts/check_downshot.py'
+      - '.github/workflows/downshot.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-24.04
+    env:
+      THEOS: ${{ github.workspace }}/.build-tools/theos
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fakeroot rsync libtinfo6 libxml2-utils
+      - uses: actions/cache@v4
+        with:
+          path: .build-tools
+          key: phonilock-theos-${{ runner.os }}-${{ hashFiles('scripts/prepare-theos.sh') }}
+      - name: Prepare pinned Theos and SDK
+        run: bash scripts/prepare-theos.sh
+      - name: Compile arm64 tweak
+        run: make -C tweaks/DownShot package FINALPACKAGE=1
+      - name: Check installable package
+        run: python scripts/check_downshot.py tweaks/DownShot/packages/*.deb
+      - uses: actions/upload-artifact@v4
+        with:
+          name: DownShot-ios12-beta
+          path: tweaks/DownShot/packages/*.deb
+          if-no-files-found: error

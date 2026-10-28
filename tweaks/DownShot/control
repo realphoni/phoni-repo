@@ -1,0 +1,13 @@
+Package: com.phoni.downshot
+Name: DownShot
+Version: 0.1.0~beta1
+Architecture: iphoneos-arm
+Description: Take screenshots with Power + Volume Down on iOS 12.
+ Adds the combination to the native screenshot recognizer, while retaining
+ the original Home + Power shortcut on the iPhone 6. No settings to configure.
+ First beta: compiled and package-checked; needs testing on a physical iPhone.
+Maintainer: Phoni
+Author: Phoni
+Section: Tweaks
+Tag: role::enduser
+Depends: mobilesubstrate, firmware (>= 12.0), firmware (<< 13.0)
