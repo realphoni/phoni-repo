@@ -4,6 +4,10 @@ my sileo repo :)
 
 Tweaks and other stuff for my iPhone 6 on iOS 12.5.8.
 
+## tweaks
+
+[PhoniLock](tweaks/PhoniLock/) — clock/date styles, colors, custom text, and hiding lock-screen elements. First beta, not tested on a physical phone yet.
+
 ## how do i add it?
 
 Open [the website](https://realphoni.github.io/phoni-repo/) and press **Add to Sileo**.

@@ -4,5 +4,7 @@ __pycache__/
 .DS_Store
 .theos/
 .test-*/
+.build-tools/
+dist-*/
 packages/
 !site/packages.json

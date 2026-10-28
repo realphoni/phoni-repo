@@ -1,0 +1,13 @@
+Package: com.phoni.phonilock
+Name: PhoniLock
+Version: 0.1.0~beta1
+Architecture: iphoneos-arm
+Description: Customize your iOS 12 lock-screen clock, date, colors, and text.
+ Settings are in Settings > PhoniLock. Includes font and size choices, alignment,
+ custom text, and switches to hide clock/date, unlock hints, page dots, and the lock icon.
+ First beta: compiled and package-checked, but not tested on a physical iPhone.
+Maintainer: Phoni
+Author: Phoni
+Section: Tweaks
+Tag: role::enduser
+Depends: mobilesubstrate, preferenceloader, firmware (>= 12.0), firmware (<< 13.0)
