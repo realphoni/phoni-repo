@@ -1,0 +1,17 @@
+Package: com.phoni.phonilink
+Name: PhoniLink
+Version: 0.1.0~beta1
+Architecture: iphoneos-arm
+Description: Call another phone nearby with PhoniLink.
+ Open PhoniLink on both phones, enable nearby calling, then tap a phone to call.
+ Includes two-way audio, incoming-call controls, mute, and speakerphone.
+ Both apps must stay open in this first beta. No cellular call rerouting.
+ Use the same Wi-Fi network. Apple's nearby transport may also use peer-to-peer Wi-Fi.
+ The other phone can use the companion IPA without a jailbreak:
+ https://realphoni.github.io/phoni-repo/phonilink.html
+ Compiled for iOS 12 and later; physical-device and modern-iOS testing still needed.
+Maintainer: Phoni
+Author: Phoni
+Section: Multimedia
+Tag: role::enduser
+Depends: firmware (>= 12.0), firmware (<< 13.0)

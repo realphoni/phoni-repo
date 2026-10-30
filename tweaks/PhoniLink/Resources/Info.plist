@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>CFBundleIdentifier</key><string>com.phoni.phonilink</string>
+  <key>CFBundleName</key><string>PhoniLink</string>
+  <key>CFBundleDisplayName</key><string>PhoniLink</string>
+  <key>CFBundleExecutable</key><string>PhoniLink</string>
+  <key>CFBundlePackageType</key><string>APPL</string>
+  <key>CFBundleVersion</key><string>1</string>
+  <key>CFBundleShortVersionString</key><string>0.1.0</string>
+  <key>CFBundleSupportedPlatforms</key><array><string>iPhoneOS</string></array>
+  <key>MinimumOSVersion</key><string>12.0</string>
+  <key>LSRequiresIPhoneOS</key><true/>
+  <key>UIDeviceFamily</key><array><integer>1</integer></array>
+  <key>UIRequiredDeviceCapabilities</key><array><string>arm64</string><string>microphone</string></array>
+  <key>UISupportedInterfaceOrientations</key><array><string>UIInterfaceOrientationPortrait</string></array>
+  <key>UIUserInterfaceStyle</key><string>Dark</string>
+  <key>CFBundleIconFiles</key><array><string>Icon.png</string></array>
+  <key>CFBundleIcons</key><dict><key>CFBundlePrimaryIcon</key><dict>
+    <key>CFBundleIconFiles</key><array><string>Icon60</string></array>
+    <key>UIPrerenderedIcon</key><true/>
+  </dict></dict>
+  <key>NSMicrophoneUsageDescription</key><string>PhoniLink uses your microphone only during a call you start or answer.</string>
+  <key>NSLocalNetworkUsageDescription</key><string>Find and call another phone running PhoniLink nearby.</string>
+  <key>NSBonjourServices</key><array><string>_phonilink._tcp</string></array>
+  <key>UILaunchScreen</key><dict/>
+  <key>UILaunchImages</key><array>
+    <dict><key>UILaunchImageName</key><string>Launch-667h</string><key>UILaunchImageMinimumOSVersion</key><string>8.0</string><key>UILaunchImageOrientation</key><string>Portrait</string><key>UILaunchImageSize</key><string>{375, 667}</string></dict>
+    <dict><key>UILaunchImageName</key><string>Launch-568h</string><key>UILaunchImageMinimumOSVersion</key><string>8.0</string><key>UILaunchImageOrientation</key><string>Portrait</string><key>UILaunchImageSize</key><string>{320, 568}</string></dict>
+    <dict><key>UILaunchImageName</key><string>Launch-736h</string><key>UILaunchImageMinimumOSVersion</key><string>8.0</string><key>UILaunchImageOrientation</key><string>Portrait</string><key>UILaunchImageSize</key><string>{414, 736}</string></dict>
+    <dict><key>UILaunchImageName</key><string>Launch-812h</string><key>UILaunchImageMinimumOSVersion</key><string>11.0</string><key>UILaunchImageOrientation</key><string>Portrait</string><key>UILaunchImageSize</key><string>{375, 812}</string></dict>
+    <dict><key>UILaunchImageName</key><string>Launch-896h</string><key>UILaunchImageMinimumOSVersion</key><string>12.0</string><key>UILaunchImageOrientation</key><string>Portrait</string><key>UILaunchImageSize</key><string>{414, 896}</string></dict>
+  </array>
+</dict></plist>

@@ -10,6 +10,8 @@ Tweaks and other stuff for my iPhone 6 on iOS 12.5.8.
 
 [DownShot](tweaks/DownShot/) — Power + Volume Down screenshots on iOS 12. First beta, needs testing on a phone.
 
+[PhoniLink](tweaks/PhoniLink/) — little phone calls over Wi-Fi. Install it from Sileo on the iPhone 6 and sideload the [companion app](https://realphoni.github.io/phoni-repo/phonilink.html) on the other phone. Both apps need to stay open. First beta, still needs testing on phones.
+
 ## how do i add it?
 
 Open [the website](https://realphoni.github.io/phoni-repo/) and press **Add to Sileo**.

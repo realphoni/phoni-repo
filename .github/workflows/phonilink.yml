@@ -1,0 +1,51 @@
+name: Build PhoniLink
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'tweaks/PhoniLink/**'
+      - 'tests/phonilink_audio_test.c'
+      - 'scripts/prepare-theos.sh'
+      - 'scripts/prepare_phonilink_assets.py'
+      - 'scripts/check_phonilink.py'
+      - 'scripts/package_phonilink_companion.py'
+      - '.github/workflows/phonilink.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  package:
+    runs-on: ubuntu-24.04
+    env:
+      THEOS: ${{ github.workspace }}/.build-tools/theos
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install build dependencies
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y fakeroot rsync libtinfo6 libxml2-utils zip
+      - uses: actions/cache@v4
+        with:
+          path: .build-tools
+          key: phonilock-theos-${{ runner.os }}-${{ hashFiles('scripts/prepare-theos.sh') }}
+      - name: Exercise audio buffers and wire protocol
+        run: |
+          cc -std=c11 -Wall -Wextra -Werror -fsanitize=address,undefined -pthread tests/phonilink_audio_test.c -o /tmp/phonilink-audio-test
+          /tmp/phonilink-audio-test
+      - name: Prepare pinned Theos, SDK, and app assets
+        run: |
+          bash scripts/prepare-theos.sh
+          python scripts/prepare_phonilink_assets.py
+      - name: Compile Sileo app and companion IPA
+        run: |
+          make -C tweaks/PhoniLink package FINALPACKAGE=1
+          python scripts/package_phonilink_companion.py tweaks/PhoniLink/packages/*.deb tweaks/PhoniLink/packages/PhoniLink-0.1.0-beta1.ipa
+      - name: Check both packages
+        run: python scripts/check_phonilink.py tweaks/PhoniLink/packages/*.deb tweaks/PhoniLink/packages/*.ipa
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PhoniLink-beta-deb-and-companion
+          path: |
+            tweaks/PhoniLink/packages/*.deb
+            tweaks/PhoniLink/packages/*.ipa
+          if-no-files-found: error
